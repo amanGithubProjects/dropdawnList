@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    .main {
+        border: 3px solid black;
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .property-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-right: 20px;
+    }
+    #changeableDiv {
+        width: 200px;
+        height: 200px;
+        border: 2px solid black;
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+<div class="main">
+    <div id="changeableDiv">
+        <p>This is a div</p>
+    </div>
+    <div class="property-container">
+        <label for="colorDropdown">Color:</label>
+        <select id="colorDropdown">
+            <option value="black">Black</option>
+            <option value="red">Red</option>
+            <option value="blue">Blue</option>
+            <option value="green">Green</option>
+        </select>
+    </div>
+    <div class="property-container">
+        <label for="backgroundColorDropdown">Background Color:</label>
+        <select id="backgroundColorDropdown">
+            <option value="white">White</option>
+            <option value="yellow">Yellow</option>
+            <option value="orange">Orange</option>
+            <option value="lightblue">Light Blue</option>
+        </select>
+    </div>
+    <div class="property-container">
+        <label for="paddingDropdown">Padding:</label>
+        <select id="paddingDropdown">
+            <option value="10px">10px</option>
+            <option value="20px">20px</option>
+            <option value="30px">30px</option>
+            <option value="40px">40px</option>
+        </select>
+    </div>
+    <div class="property-container">
+        <label for="fontSizeDropdown">Font Size:</label>
+        <select id="fontSizeDropdown">
+            <option value="16px">16px</option>
+            <option value="20px">20px</option>
+            <option value="24px">24px</option>
+            <option value="28px">28px</option>
+        </select>
+    </div>
+    <div class="property-container">
+        <label for="fontWeightDropdown">Font Weight:</label>
+        <select id="fontWeightDropdown">
+            <option value="normal">Normal</option>
+            <option value="bold">Bold</option>
+            <option value="bolder">Bolder</option>
+            <option value="lighter">Lighter</option>
+        </select>
+    </div>
+</div>
+
+<script>
+    const changeableDiv = document.getElementById('changeableDiv');
+    const colorDropdown = document.getElementById('colorDropdown');
+    const backgroundColorDropdown = document.getElementById('backgroundColorDropdown');
+    const paddingDropdown = document.getElementById('paddingDropdown');
+    const fontSizeDropdown = document.getElementById('fontSizeDropdown');
+    const fontWeightDropdown = document.getElementById('fontWeightDropdown');
+
+    // Event listeners for each dropdown
+    colorDropdown.addEventListener('change', () => {
+        changeableDiv.style.color = colorDropdown.value;
+    });
+
+    backgroundColorDropdown.addEventListener('change', () => {
+        changeableDiv.style.backgroundColor = backgroundColorDropdown.value;
+    });
+
+    paddingDropdown.addEventListener('change', () => {
+        changeableDiv.style.padding = paddingDropdown.value;
+    });
+
+    fontSizeDropdown.addEventListener('change', () => {
+        changeableDiv.style.fontSize = fontSizeDropdown.value;
+    });
+
+    fontWeightDropdown.addEventListener('change', () => {
+        changeableDiv.style.fontWeight = fontWeightDropdown.value;
+    });
+</script>
+</body>
+</html>
